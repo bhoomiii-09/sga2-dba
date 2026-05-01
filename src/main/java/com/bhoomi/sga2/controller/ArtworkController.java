@@ -35,6 +35,7 @@ public class ArtworkController {
     // CREATE - to save artwork
     @PostMapping("/saveArtwork")
     public String saveArtwork(@ModelAttribute Artwork artwork) {
+        System.out.println("SAVE ARTWORK CALLED");
         try {
             artworkService.saveArtwork(artwork);
         } catch (Exception e) {

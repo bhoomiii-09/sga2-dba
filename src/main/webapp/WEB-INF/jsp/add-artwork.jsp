@@ -6,8 +6,8 @@
 </head>
 <body>
 <h2>Add New Artwork</h2>
-<form action="/saveArtwork" method="post">
-
+<form action="${pageContext.request.contextPath}/saveArtwork" method="post">
+    
     Title: <input type="text" name="title" /><br/><br/>
 
     Medium: <input type="text" name="medium" /><br/><br/>
