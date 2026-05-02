@@ -5,12 +5,16 @@
     <title>Artworks</title>
 </head>
 <body>
-
 <h2>All Artworks</h2>
 
-<a href="/addArtwork">Add New Artwork</a>
+<a href="${pageContext.request.contextPath}/addArtwork">
+    Add New Artwork
+</a>
 
-<table border="1">
+<br/><br/>
+
+<table border="1" cellpadding="8" cellspacing="0">
+
     <tr>
         <th>Title</th>
         <th>Medium</th>
@@ -25,13 +29,15 @@
             <td>${a.medium}</td>
             <td>${a.price}</td>
             <td>${a.artist.name}</td>
+
             <td>
-                <a href="/editArtwork/${a.artworkId}">Edit</a>
+                <a href="${pageContext.request.contextPath}/editArtwork/${a.artworkId}">
+                    Edit
+                </a>
             </td>
         </tr>
     </c:forEach>
 
 </table>
-
 </body>
 </html>
