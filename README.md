@@ -27,12 +27,24 @@ It supports Create, Read, and Update operations using a layered architecture (Co
 - JUnit & Mockito
 
 ## Project Structure
-
+```
 src/main/java/com/bhoomi/sga2
 ├── controller
+│   ├── HomeController.java
+│   ├── ArtworkController.java
+│   └── ArtistController.java
+│
 ├── service
+│   ├── ArtworkService.java
+│   └── ArtistService.java
+│
 ├── repository
-├── entity
+│   ├── ArtworkRepository.java
+│   └── ArtistRepository.java
+│
+└── entity
+    ├── Artwork.java
+    └── Artist.java
 
 src/main/webapp/WEB-INF/jsp
 ├── home.jsp
@@ -40,11 +52,19 @@ src/main/webapp/WEB-INF/jsp
 ├── artist-list.jsp
 ├── add-artwork.jsp
 ├── edit-artwork.jsp
-├── artwork-details.jsp
+├── add-artist.jsp
+├── edit-artist.jsp
+└── artwork-details.jsp
 
 src/main/resources
 ├── application.properties
-├── data.sql
+└── data.sql
+
+src/test/java/com/bhoomi/sga2
+├── ArtworkServiceTest.java
+├── ArtistServiceTest.java
+└── ArtworkServiceMockTest.java
+```
 
 ## How to Run the Project
 
