@@ -6,6 +6,6 @@ import com.bhoomi.sga2.entity.Artwork;
 import java.util.List;
 
 public interface ArtworkRepository extends JpaRepository<Artwork, Long> {
-    @Query("SELECT a.title, a.medium, ar.name FROM Artwork a JOIN a.artist ar")
+    @Query("SELECT a.title, a.medium, a.price, ar.name FROM Artwork a JOIN a.artist ar")
     List<Object[]> fetchArtworkWithArtist();
 }

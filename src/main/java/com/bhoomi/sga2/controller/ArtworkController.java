@@ -58,4 +58,11 @@ public class ArtworkController {
         artworkService.saveArtwork(artwork);
         return "redirect:/artworks";
     }
+
+    // READ - to display all artwork details
+    @GetMapping("/artworkDetails")
+    public String getArtworkDetails(Model model) {
+        model.addAttribute("details", artworkService.getArtworkWithArtist());
+        return "artwork-details";
+    }
 }
