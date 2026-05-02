@@ -1,25 +1,44 @@
 <html>
 <head>
     <title>Add Artist</title>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css">
 </head>
 <body>
 
-<h2>Add Artist</h2>
+<div class="container">
 
-<form action="${pageContext.request.contextPath}/saveArtist" method="post">
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h3>Dashboard</h3>
+        <a href="${pageContext.request.contextPath}/artworks">Artworks</a>
+        <a href="${pageContext.request.contextPath}/artists">Artists</a>
+        <a href="${pageContext.request.contextPath}/artworkDetails">Details</a>
+    </div>
 
-    Name:
-    <input type="text" name="name" /><br/><br/>
+    <!-- Content -->
+    <div class="content">
+        <div class="card">
 
-    Country:
-    <input type="text" name="country" /><br/><br/>
+            <h2>Add Artist</h2>
 
-    Style:
-    <input type="text" name="style" /><br/><br/>
+            <form action="${pageContext.request.contextPath}/saveArtist" method="post">
 
-    <button type="submit">Add Artist</button>
+                Name:
+                <input type="text" name="name" /><br/><br/>
+                
+                Country:
+                <input type="text" name="country" /><br/><br/>
 
-</form>
+                Style:
+                <input type="text" name="style" /><br/><br/>
 
+                <button type="submit">Add Artist</button>
+            
+            </form>
+
+        </div>
+    </div>
+
+</div>
 </body>
 </html>

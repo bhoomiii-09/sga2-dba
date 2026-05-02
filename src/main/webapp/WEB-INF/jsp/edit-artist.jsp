@@ -1,27 +1,45 @@
 <html>
 <head>
     <title>Edit Artist</title>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css">
 </head>
 <body>
 
-<h2>Edit Artist</h2>
+<div class="container">
 
-<form action="${pageContext.request.contextPath}/updateArtist" method="post">
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h3>Dashboard</h3>
+        <a href="${pageContext.request.contextPath}/artworks">Artworks</a>
+        <a href="${pageContext.request.contextPath}/artists">Artists</a>
+        <a href="${pageContext.request.contextPath}/artworkDetails">Details</a>
+    </div>
 
-    <input type="hidden" name="artistId" value="${artist.artistId}" />
+    <!-- Content -->
+    <div class="content">
+        <div class="card">
 
-    Name:
-    <input type="text" name="name" value="${artist.name}" /><br/><br/>
+            <h2>Edit Artist</h2>
+            
+            <form action="${pageContext.request.contextPath}/updateArtist" method="post">
 
-    Country:
-    <input type="text" name="country" value="${artist.country}" /><br/><br/>
+                <input type="hidden" name="artistId" value="${artist.artistId}" />
+                
+                Name:
+                <input type="text" name="name" value="${artist.name}" /><br/><br/>
 
-    Style:
-    <input type="text" name="style" value="${artist.style}" /><br/><br/>
+                Country:
+                <input type="text" name="country" value="${artist.country}" /><br/><br/>
 
-    <button type="submit">Update Artist</button>
+                Style:
+                <input type="text" name="style" value="${artist.style}" /><br/><br/>
+                <button type="submit">Update Artist</button>
 
-</form>
+            </form>
 
+        </div>
+    </div>
+
+</div>
 </body>
 </html>

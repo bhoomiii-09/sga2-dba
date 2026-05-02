@@ -3,41 +3,55 @@
 <html>
 <head>
     <title>Artworks</title>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css">
 </head>
 <body>
-<h2>All Artworks</h2>
 
-<a href="${pageContext.request.contextPath}/addArtwork">
-    Add New Artwork
-</a>
+<div class="container">
 
-<br/><br/>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h3>Dashboard</h3>
+        <a href="${pageContext.request.contextPath}/artworks">Artworks</a>
+        <a href="${pageContext.request.contextPath}/artists">Artists</a>
+        <a href="${pageContext.request.contextPath}/artworkDetails">Details</a>
+    </div>
 
-<table border="1" cellpadding="8" cellspacing="0">
+    <!-- Content -->
+    <div class="content">
+        <div class="card">
 
-    <tr>
-        <th>Title</th>
-        <th>Medium</th>
-        <th>Price</th>
-        <th>Artist</th>
-        <th>Action</th>
-    </tr>
+            <h2>All Artworks</h2>
+            <a href="${pageContext.request.contextPath}/addArtwork">
+                Add New Artwork
+            </a>
+            <br/><br/>
+            <table border="1" cellpadding="8" cellspacing="0">
+                <tr>
+                    <th>Title</th>
+                    <th>Medium</th>
+                    <th>Price</th>
+                    <th>Artist</th>
+                    <th>Action</th>
+                </tr>
+                <c:forEach var="a" items="${artworks}">
+                    <tr>
+                        <td>${a.title}</td>
+                        <td>${a.medium}</td>
+                        <td>${a.price}</td>
+                        <td>${a.artist.name}</td>
+                        <td>
+                            <a href="${pageContext.request.contextPath}/editArtwork/${a.artworkId}">
+                                Edit
+                            </a>
+                        </td>
+                    </tr>
+                </c:forEach>
+            </table>
 
-    <c:forEach var="a" items="${artworks}">
-        <tr>
-            <td>${a.title}</td>
-            <td>${a.medium}</td>
-            <td>${a.price}</td>
-            <td>${a.artist.name}</td>
+        </div>
+    </div>
 
-            <td>
-                <a href="${pageContext.request.contextPath}/editArtwork/${a.artworkId}">
-                    Edit
-                </a>
-            </td>
-        </tr>
-    </c:forEach>
-
-</table>
+</div>
 </body>
 </html>

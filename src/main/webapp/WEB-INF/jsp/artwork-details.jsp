@@ -3,29 +3,46 @@
 <html>
 <head>
     <title>Artwork Details</title>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css">
 </head>
 <body>
 
-<h2>Artwork Details (With Artist)</h2>
+<div class="container">
 
-<table border="1" cellpadding="8">
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h3>Dashboard</h3>
+        <a href="${pageContext.request.contextPath}/artworks">Artworks</a>
+        <a href="${pageContext.request.contextPath}/artists">Artists</a>
+        <a href="${pageContext.request.contextPath}/artworkDetails">Details</a>
+    </div>
 
-    <tr>
-        <th>Title</th>
-        <th>Medium</th>
-        <th>Price</th>
-        <th>Artist Name</th>
-    </tr>
+    <!-- Content -->
+    <div class="content">
+        <div class="card">
 
-    <c:forEach var="d" items="${details}">
-        <tr>
-            <td>${d[0]}</td>
-            <td>${d[1]}</td>
-            <td>${d[2]}</td>
-            <td>${d[3]}</td>
-        </tr>
-    </c:forEach>
+            <h2>Artwork Details (With Artist)</h2>
+            
+            <table border="1" cellpadding="8">
+                <tr>
+                    <th>Title</th>
+                    <th>Medium</th>
+                    <th>Price</th>
+                    <th>Artist Name</th>
+                </tr>
+                <c:forEach var="d" items="${details}">
+                    <tr>
+                        <td>${d[0]}</td>
+                        <td>${d[1]}</td>
+                        <td>${d[2]}</td>
+                        <td>${d[3]}</td>
+                    </tr>
+                </c:forEach>
+            </table>
 
-</table>
+        </div>
+    </div>
+
+</div>
 </body>
 </html>
